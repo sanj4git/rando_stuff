@@ -14,3 +14,23 @@ def factors(n):
     print(factor)
 
 factors(36)
+
+
+
+# Another method without using ** 0.5
+
+
+n = 36
+
+i = 1
+factors = []
+
+while i*i <= n:
+
+    if n % i == 0:
+        factors.append(i)
+        factors.append(int(n / i)) if int(n / i) != i else ...
+
+    i += 1
+
+print(factors)
