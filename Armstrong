@@ -1,0 +1,26 @@
+
+def order(n):
+
+    count = 0
+
+    while n > 0:
+        count += 1
+        n //= 10
+
+    return count
+
+def power_sum(num, order):
+
+    powersum = 0
+
+    while num > 0:
+        powersum += ((num % 10) ** order)
+        num //= 10
+
+    return powersum
+
+def armstrong(n):
+
+    return n == power_sum(n, order(n))
+
+print(armstrong(153))
