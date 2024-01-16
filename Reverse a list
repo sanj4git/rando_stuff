@@ -1,0 +1,14 @@
+def reversed_a_list(lis):
+
+    i = 0
+    j = len(lis) - 1
+
+    while i < j:
+
+        lis[i], lis[j] = lis[j], lis[i]
+
+        i += 1
+        j -= 1
+    return lis
+
+print(reversed_a_list([1,2,3,4,5,6,7]))
