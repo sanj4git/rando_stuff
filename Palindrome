@@ -1,0 +1,50 @@
+# String Palindrome
+
+def is_palindrome(str):
+
+    i = 0
+    while i < len(str) // 2:
+        if str[i] != str[len(str) - 1 - i]:
+            return False
+
+        i += 1
+
+
+    return True
+
+# String Palindrome using Recursion
+
+def rec_palindrome(str):
+
+    if len(str) <= 1:
+        return True
+
+    if str[0] != str[len(str) - 1]:
+        return False
+
+    return rec_palindrome(str[1:-1])
+
+print(rec_palindrome('madam'))
+
+
+
+
+
+# Integer Palindrome
+
+def reverse_a_number(num):
+
+    reversed_num = 0
+
+    while num > 0:
+
+        reversed_num = reversed_num * 10 + (num % 10)
+        num //= 10
+
+    return reversed_num
+
+def integer_pal(num):
+
+    return num == reverse_a_number(num)
+
+print(integer_pal(1212))
