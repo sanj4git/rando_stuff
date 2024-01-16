@@ -12,3 +12,17 @@ def reversed_a_list(lis):
     return lis
 
 print(reversed_a_list([1,2,3,4,5,6,7]))
+
+# Using Recursion
+
+# Reverse an array using recursion
+
+def reversed_list(list, left_index, right_index):
+
+    if left_index > right_index:
+        return list
+
+    list[left_index], list[right_index] = list[right_index], list[left_index]
+    return reversed_list(list, left_index + 1, right_index - 1)
+
+print(reversed_list([1,2,3,4,5,6,7], 0, 6))
