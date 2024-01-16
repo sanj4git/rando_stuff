@@ -1,0 +1,33 @@
+# GCD / HCF
+
+def gcd(a,b):
+
+    for i in range(min(a,b), 0, -1):
+
+        if a % i == 0 and b % i == 0:
+            return i
+
+print(gcd(5,10))
+
+
+# Euclidian Algorithm for HCD or GCD
+
+# In actual terms for a > b, gcd(a,b) = gcd(a-b, b)
+# To improve efficiency, we use gcd(a, b) = gcd(a % b, b)
+# gcd(n,0) = n     (Obviously!)
+
+def gcd(a,b):
+
+    while a > 0 and b > 0:
+
+        if a > b:
+            a %= b
+
+        elif b > a:
+            b %= a
+
+        else:
+            return a
+
+    return a if b == 0 else b
+
