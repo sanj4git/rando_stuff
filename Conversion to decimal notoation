@@ -1,0 +1,67 @@
+// Binary to Decimal
+int bin_dec(int num){
+
+    int soln = 0;
+
+    int power = 0;
+
+    while(num > 0){
+        int las = num % 10;
+        num /= 10;
+
+        soln += (las * pow(2, power));
+        power += 1;
+    }
+
+    return soln;
+}
+
+
+
+//Octal to Decimal
+
+int oct_dec(int num){
+
+    int soln = 0;
+
+    int power = 0;
+
+    while(num > 0){
+        int las = num % 10;
+        num /= 10;
+
+        soln += (las * pow(8, power));
+        power += 1;
+    }
+
+    return soln;
+}
+
+
+//Hexal to Decimal
+
+int hex_dex(string hex){
+
+    int power = 0;
+    int soln = 0;
+
+    while(hex.length() > 0){
+
+        char las = hex[hex.length() - 1];
+        hex.pop_back();
+
+        if(las >= '0' && las <= '9'){
+            soln += (pow(16, power) * (las - '0'));
+        }
+
+        else{
+            soln += (pow(16, power) * (las - 'A' + 10));
+        }
+
+        power += 1;
+
+        
+    }
+
+    return soln;
+}
